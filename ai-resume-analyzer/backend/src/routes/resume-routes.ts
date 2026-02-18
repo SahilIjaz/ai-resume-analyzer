@@ -7,6 +7,11 @@ import {
 } from "../services/grok-service";
 import { ResumeAnalysis } from "../types/resume-types";
 
+
+
+
+console.log("✓ Resume routes module imported successfully");
+
 // Import pdfjs-dist
 import * as pdfjsLib from "pdfjs-dist";
 
