@@ -50,10 +50,14 @@ export default function ResumeForm() {
 
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:4000/api/analyze", {
-        method: "POST",
-        body: formData,
-      });
+      // const response = await fetch("http://localhost:4000/api/analyze", {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/analyze`,
+        {
+          method: "POST",
+          body: formData,
+        },
+      );
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Analysis failed");
       setResult(data);
